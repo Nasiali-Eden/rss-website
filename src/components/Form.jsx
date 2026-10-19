@@ -123,7 +123,7 @@ export default function Form({ name, action, submitLabel, successMessage, classN
     <form
       name={name}
       method="POST"
-      action={ENDPOINT || action}
+      action={ENDPOINT || import.meta.env.BASE_URL.replace(/\/$/, '') + action}
       data-netlify={ENDPOINT ? undefined : 'true'}
       netlify-honeypot={ENDPOINT ? undefined : 'bot-field'}
       onSubmit={onSubmit}

@@ -8,7 +8,7 @@ export function render(url) {
   const head = {};
   const html = renderToString(
     <HeadContext.Provider value={head}>
-      <StaticRouter location={url}>
+      <StaticRouter basename={import.meta.env.BASE_URL} location={import.meta.env.BASE_URL.replace(/\/$/, '') + url}>
         <App />
       </StaticRouter>
     </HeadContext.Provider>

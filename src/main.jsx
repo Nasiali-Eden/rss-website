@@ -8,7 +8,7 @@ import './styles/global.css';
 const root = document.getElementById('root');
 const app = (
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>
