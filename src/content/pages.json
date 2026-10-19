@@ -1,0 +1,39 @@
+{
+  "values": [
+    { "title": "Christian Faith & Biblical Integrity", "text": "We are guided by Christian faith and biblical principles in our ministry, relationships and service to communities." },
+    { "title": "Compassion & Servant Leadership", "text": "We serve with humility, compassion and a commitment to putting people and communities at the heart of what we do." },
+    { "title": "Human Dignity & Respect", "text": "We recognise the inherent dignity and worth of every person and treat all people with respect, fairness and care." },
+    { "title": "Accountability & Transparency", "text": "We are committed to responsible stewardship, openness and accountability to the communities, partners and supporters we serve." },
+    { "title": "Partnership & Collaboration", "text": "We believe sustainable transformation is achieved through strong partnerships and collective action." },
+    { "title": "Community Participation", "text": "We involve communities in identifying their needs, developing solutions and taking ownership of sustainable change." }
+  ],
+  "pillars": [
+    { "label": "Community-Led", "short": "Communities identify priorities and shape solutions.", "long": "We listen to communities and involve them in identifying priorities and developing solutions." },
+    { "label": "Christ-Centred", "short": "Faith moves us to serve with humility and love.", "long": "Our Christian faith motivates us to serve with compassion, humility, integrity and love." },
+    { "label": "Holistic", "short": "Spiritual, social, emotional and economic needs together.", "long": "We address spiritual, social, educational, emotional, economic and physical needs together." },
+    { "label": "Partnership-Based", "short": "Local and international partners, shared resources.", "long": "We collaborate with local and international partners to maximise knowledge, resources and impact." },
+    { "label": "Sustainable", "short": "Local capacity and ownership that lasts.", "long": "We strengthen local capacity and ownership so that communities can sustain positive change." },
+    { "label": "Inclusive", "short": "Women, girls, youth and the vulnerable take part.", "long": "We ensure that women, girls, children, youth and vulnerable groups have opportunities to participate and benefit." }
+  ],
+  "partnerWays": [
+    { "id": "funding", "icon": "funding", "title": "Funding", "text": "Support programmes that respond to critical community needs.", "label": "Funding" },
+    { "id": "technical", "icon": "technical", "title": "Technical Support", "text": "Share expertise, knowledge and skills that strengthen our programmes and institutional capacity.", "label": "Technical support" },
+    { "id": "strategic", "icon": "strategic", "title": "Strategic Partnerships", "text": "Collaborate with us to design and implement sustainable community initiatives.", "label": "Strategic partnership" },
+    { "id": "prayer", "icon": "prayer", "title": "Prayer & Advocacy", "text": "Stand with communities through prayer and help raise awareness of their needs and opportunities.", "label": "Prayer & advocacy" },
+    { "id": "resources", "icon": "resources", "title": "Resources", "text": "Support the provision of learning materials, Scripture resources, water facilities, livelihood inputs and other essential resources.", "label": "Resources" }
+  ],
+  "workWith": ["Government institutions", "Churches and Christian denominations", "Community-based organisations", "National NGOs", "International NGOs", "Faith-based organisations", "Bible translation organisations", "Development partners", "Local community structures", "Other like-minded organisations"],
+  "whoWeServe": [
+    { "icon": "language", "label": "Unreached and underserved language communities" },
+    { "icon": "women", "label": "Women and girls" },
+    { "icon": "child", "label": "Children and youth" },
+    { "icon": "people", "label": "Pastors and church leaders" },
+    { "icon": "tent", "label": "Internally displaced persons (IDPs)" },
+    { "icon": "route", "label": "Refugees and returnees" },
+    { "icon": "dove", "label": "Conflict-affected communities" },
+    { "icon": "shield", "label": "Survivors of violence" },
+    { "icon": "home", "label": "Rural and marginalised communities" },
+    { "icon": "heart", "label": "Vulnerable households" },
+    { "icon": "drop", "label": "Communities with limited access to essential services" }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "gallery": [
+    {
+      "photo": "p1",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    },
+    {
+      "photo": "p2",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    },
+    {
+      "photo": "p4",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    },
+    {
+      "photo": "p5",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    },
+    {
+      "photo": "p6",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    },
+    {
+      "photo": "p7",
+      "alt": "TODO: client to supply caption",
+      "caption": ""
+    }
+  ]
+}

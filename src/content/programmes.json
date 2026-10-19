@@ -1,0 +1,166 @@
+{
+  "programmes": [
+    {
+      "slug": "bible-translation-literacy",
+      "title": "Bible Translation & Literacy",
+      "seoTitle": "Bible Translation & Literacy | Relief South Sudan",
+      "icon": "book",
+      "tagline": "Making God’s Word accessible to every language community.",
+      "need": "South Sudan is home to diverse language communities, many of which have limited access to Scripture and literacy resources in their own languages.",
+      "response": "Through our Bible Translation and Literacy programme, we support efforts to make God’s Word accessible, understandable and relevant to local communities.",
+      "activities": [
+        "Bible translation into South Sudanese languages",
+        "Mother-tongue literacy programmes",
+        "Scripture engagement",
+        "Audio Scripture resources",
+        "Digital Scripture resources",
+        "Translation capacity building",
+        "Literacy and reading initiatives",
+        "Culturally relevant Christian resources"
+      ],
+      "outcome": "We believe that people should have the opportunity to encounter and understand God’s Word in a language they know and understand.",
+      "image": "P5",
+      "related": [
+        "church-leadership",
+        "trauma-healing-peacebuilding"
+      ]
+    },
+    {
+      "slug": "trauma-healing-peacebuilding",
+      "title": "Trauma Healing, Psychosocial Support & Peacebuilding",
+      "shortTitle": "Trauma Healing & Peacebuilding",
+      "seoTitle": "Trauma Healing & Peacebuilding | Relief South Sudan",
+      "icon": "heart",
+      "tagline": "Helping communities heal, rebuild and live in peace.",
+      "need": "Conflict, displacement, violence and loss have left many individuals and communities experiencing trauma and emotional distress.",
+      "response": "Our programmes provide community-based opportunities for healing, reconciliation and psychosocial support.",
+      "activities": [
+        "Community trauma-healing programmes",
+        "Psychosocial support",
+        "Healing and support groups",
+        "Peacebuilding and reconciliation",
+        "Community dialogue",
+        "Conflict resolution",
+        "Support for survivors of violence",
+        "Community resilience initiatives"
+      ],
+      "outcome": "We seek to create safe spaces where individuals and communities can heal, rebuild relationships and develop hope for the future.",
+      "image": "P4",
+      "imageRule": "Wide shots only — no identifiable participants.",
+      "related": [
+        "girls-empowerment",
+        "church-leadership"
+      ]
+    },
+    {
+      "slug": "church-leadership",
+      "title": "Church Leadership & Discipleship",
+      "seoTitle": "Church Leadership & Discipleship | Relief South Sudan",
+      "icon": "people",
+      "tagline": "Strengthening leaders to serve effectively.",
+      "need": "Strong and servant-hearted Christian leadership is essential for healthy churches and transformed communities.",
+      "response": "Relief South Sudan supports pastors, church leaders and emerging leaders through training, mentorship and capacity development.",
+      "activities": [
+        "Leadership development",
+        "Pastoral and ministry training",
+        "Discipleship",
+        "Biblical leadership",
+        "Mentorship",
+        "Church administration and organisational development",
+        "Community outreach and service",
+        "Development of emerging Christian leaders"
+      ],
+      "outcome": "We seek to equip local leaders with the knowledge, skills and values required to serve their churches and communities effectively.",
+      "image": "P6",
+      "related": [
+        "bible-translation-literacy",
+        "trauma-healing-peacebuilding"
+      ]
+    },
+    {
+      "slug": "girls-empowerment",
+      "title": "Girls’ Empowerment & Protection",
+      "seoTitle": "Girls’ Empowerment & Protection | Relief South Sudan",
+      "icon": "shield",
+      "tagline": "Creating opportunities for girls to learn, grow and thrive.",
+      "need": "Girls and young women face significant barriers to education, safety, economic opportunity and participation in community life.",
+      "response": "Our Girls’ Initiative seeks to empower girls with knowledge, confidence, skills and opportunities while working with communities to address harmful practices and protection concerns.",
+      "activities": [
+        "Girls’ education support",
+        "Mentorship",
+        "Life-skills development",
+        "Leadership development",
+        "Menstrual health and hygiene education",
+        "Protection and safeguarding",
+        "Prevention of early marriage",
+        "Gender-based violence awareness and prevention",
+        "Community advocacy",
+        "Support and referral for vulnerable girls"
+      ],
+      "outcome": "We believe every girl deserves the opportunity to grow up safe, educated, empowered and hopeful.",
+      "image": null,
+      "imageRule": "NO PHOTO EXISTS. Use illustration or placeholder. Never show identifiable girls.",
+      "related": [
+        "women-livelihoods",
+        "trauma-healing-peacebuilding"
+      ]
+    },
+    {
+      "slug": "wash",
+      "title": "Water, Sanitation & Hygiene (WASH)",
+      "shortTitle": "Water, Sanitation & Hygiene",
+      "seoTitle": "Water, Sanitation & Hygiene (WASH) | Relief South Sudan",
+      "icon": "drop",
+      "tagline": "Improving access to safe water and healthier communities.",
+      "need": "Access to safe water, sanitation and hygiene is fundamental to health, dignity and community development.",
+      "response": "Relief South Sudan works with communities to improve access to safe water and strengthen sustainable community management of water resources.",
+      "activities": [
+        "Borehole drilling",
+        "Rehabilitation of water points",
+        "Safe drinking water initiatives",
+        "Hygiene promotion",
+        "Sanitation awareness",
+        "Community health and hygiene education",
+        "Water management training",
+        "Community water committees",
+        "Sustainable water resource management"
+      ],
+      "outcome": "We work with communities to ensure that water facilities are appropriately managed, maintained and sustained for long-term benefit.",
+      "image": null,
+      "imageRule": "Needed: borehole / water point photos. Placeholder until supplied.",
+      "related": [
+        "women-livelihoods",
+        "girls-empowerment"
+      ]
+    },
+    {
+      "slug": "women-livelihoods",
+      "title": "Women Empowerment & Livelihoods",
+      "seoTitle": "Women Empowerment & Livelihoods | Relief South Sudan",
+      "icon": "sprout",
+      "tagline": "Strengthening women and families through opportunity and economic empowerment.",
+      "cardLine": "Strengthening women and families through economic opportunity.",
+      "need": "Women are central to the wellbeing and resilience of families and communities. Yet many women face limited access to financial resources, skills, markets and economic opportunities.",
+      "response": "Our Women Empowerment programmes support women to develop skills, strengthen livelihoods and participate more actively in household and community decision-making.",
+      "activities": [
+        "Livelihood development",
+        "Savings and loan groups",
+        "Entrepreneurship training",
+        "Vocational skills",
+        "Income-generating activities",
+        "Financial literacy",
+        "Small business development",
+        "Leadership development",
+        "Economic empowerment",
+        "Mentorship and peer support"
+      ],
+      "outcome": "We seek to help women build sustainable livelihoods that contribute to stronger families and more resilient communities.",
+      "image": null,
+      "imageRule": "Needed: savings group / enterprise photos. Placeholder until supplied.",
+      "related": [
+        "girls-empowerment",
+        "wash"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+/* Relief South Sudan — design tokens (source of truth for the build) */
+:root {
+  /* Colour */
+  --navy: #010E2B;          /* primary, header/footer, headings, dark bands */
+  --amber: #EB9E16;         /* primary buttons, icon discs, rules — FILLS ONLY, navy text on it */
+  --gold: #F6D569;          /* accents on navy, sunrise gradient top */
+  --cream: #FCFAE5;         /* alternate section background */
+  --brown: #3F392F;         /* secondary text, captions */
+  --amber-text: #8F5A00;    /* amber-coloured TEXT on white/cream (5.5:1) */
+  --leaf: #4E8A3A;          /* WASH/livelihood tags only, sparingly */
+  --line: #E7E1C8;          /* card borders, dividers */
+  --icon-disc: #FCF1D9;     /* programme icon background */
+  --input-border: #8A8169;
+  --on-navy: #FCFAE5;       /* text on navy */
+  --on-navy-muted: #D9D5BF; /* footer text */
+  --navy-rule: #23314F;     /* footer divider */
+  --flag-bg: #FDE7D6; --flag-text: #7A2E0E; /* "pending content" flags — design-only, never ship */
+
+  /* Gradients (only these two) */
+  --sunrise: linear-gradient(180deg, #F6D569 0%, #EB9E16 100%);           /* closing CTA bands */
+  --hero-scrim: linear-gradient(90deg, #010E2B 0%, rgba(1,14,43,.92) 40%, rgba(1,14,43,.2) 100%);
+  --hero-scrim-mobile: linear-gradient(180deg, rgba(1,14,43,.55) 0%, #010E2B 70%);
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;          /* weights 400, 600 (700 only if needed) */
+  --font-body: "Source Sans 3", system-ui, sans-serif; /* weights 400, 600, 700 */
+  --fs-h1: clamp(36px, 5vw, 64px);   /* lh 1.08 */
+  --fs-h2: 40px;                     /* lh 1.15; 28px on mobile */
+  --fs-h3: 22px;                     /* lh 1.25 */
+  --fs-quote: clamp(26px, 3.2vw, 40px); /* lh 1.3 */
+  --fs-body: 18px;                   /* lh 1.6; 17px on mobile */
+  --fs-small: 16px;
+  --fs-eyebrow: 14px;                /* 700, uppercase, letter-spacing .16em, colour --amber-text (or --gold on navy) */
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 24px;           /* 16px under 480px */
+  --section-y: 96px;        /* 56–64px on mobile */
+  --radius-btn: 6px;
+  --radius-card: 10px;
+  --radius-panel: 12px;
+  --radius-pill: 999px;
+}

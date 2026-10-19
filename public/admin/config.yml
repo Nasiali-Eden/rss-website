@@ -1,0 +1,219 @@
+# Decap CMS (git-based). Edits are committed to the repo; the host rebuilds the site.
+# TODO: auth. Netlify: backend.name = git-gateway (+ enable Identity).
+#       GitHub OAuth: backend.name = github, repo = <owner>/<repo>, base_url = <oauth proxy>.
+backend:
+  name: git-gateway
+  branch: main
+# local_backend: true   # run `npx decap-server` for local editing
+
+media_folder: public/uploads
+public_folder: /uploads
+locale: en
+
+collections:
+  - name: site
+    label: Site settings
+    files:
+      - name: site
+        label: Organisation details
+        file: src/content/site.json
+        fields:
+          - { name: name, label: Name, widget: string }
+          - { name: shortName, label: Short name, widget: string }
+          - { name: url, label: Website URL, widget: string }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: heroLine, label: Home headline, widget: string }
+          - { name: valuesLine, label: About headline, widget: string }
+          - name: address
+            label: Address
+            widget: object
+            fields:
+              - { name: line1, label: Line 1, widget: string }
+              - { name: locality, label: Town, widget: string }
+              - { name: region, label: Region, widget: string }
+              - { name: country, label: Country, widget: string }
+          - { name: email, label: Email, widget: string }
+          - name: phones
+            label: Phone numbers (only add confirmed numbers)
+            widget: list
+            fields:
+              - { name: display, label: Display, widget: string }
+              - { name: tel, label: "tel: value (+211…)", widget: string }
+              - { name: whatsapp, label: WhatsApp number (confirmed only), widget: string, required: false }
+          - { name: officeHours, label: Office hours (leave empty to hide), widget: string, required: false }
+          - name: social
+            label: Social accounts (leave empty to hide)
+            widget: object
+            fields:
+              - { name: facebook, label: Facebook URL, widget: string, required: false }
+              - { name: whatsapp, label: WhatsApp channel URL, widget: string, required: false }
+              - { name: linkedin, label: LinkedIn URL, widget: string, required: false }
+              - { name: youtube, label: YouTube URL, widget: string, required: false }
+          - name: registration
+            label: Registration
+            widget: object
+            fields:
+              - { name: body, label: Registered with, widget: string }
+              - { name: number, label: Registration number, widget: string }
+              - { name: act, label: Act, widget: string }
+              - { name: validUntil, label: Valid until, widget: datetime, format: YYYY-MM-DD, time_format: false }
+          - name: documents
+            label: Documents (PDF links; empty = hidden)
+            widget: object
+            fields:
+              - { name: certificate, label: Registration certificate, widget: file, required: false }
+              - { name: profile, label: Organisation profile, widget: file, required: false }
+              - { name: annualReport, label: Annual report, widget: file, required: false }
+          - name: map
+            label: Map
+            widget: object
+            fields:
+              - { name: staticImage, label: Static map image, widget: image, required: false }
+              - { name: embedUrl, label: Interactive map embed URL, widget: string }
+          - name: impact
+            label: Impact numbers
+            widget: object
+            fields:
+              - { name: published, label: Show on site, widget: boolean, default: false }
+              - name: stats
+                label: Stats (real numbers only)
+                widget: list
+                fields:
+                  - { name: value, label: Number, widget: number, value_type: int }
+                  - { name: suffix, label: Suffix (e.g. +), widget: string, required: false }
+                  - { name: label, label: Label, widget: string }
+          - name: gallery
+            label: Gallery
+            widget: object
+            fields:
+              - { name: published, label: Show gallery (only once photo consent is confirmed), widget: boolean, default: false }
+
+  - name: programmes
+    label: Programmes
+    files:
+      - name: programmes
+        label: All programmes
+        file: src/content/programmes.json
+        fields:
+          - name: programmes
+            label: Programmes
+            widget: list
+            fields:
+              - { name: slug, label: Slug (do not change), widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: shortTitle, label: Short title (cards and nav), widget: string, required: false }
+              - { name: seoTitle, label: SEO title, widget: string }
+              - { name: icon, label: Icon, widget: select, options: [book, heart, people, shield, drop, sprout] }
+              - { name: tagline, label: Tagline, widget: string }
+              - { name: cardLine, label: Card line (optional), widget: string, required: false }
+              - { name: need, label: The need, widget: text }
+              - { name: response, label: Our response, widget: text }
+              - { name: activities, label: Activities, widget: list }
+              - { name: outcome, label: Outcome quote, widget: text }
+              - { name: image, label: Photo slot (P1–P7) or empty, widget: string, required: false }
+              - { name: imageRule, label: Image rule, widget: string, required: false }
+              - { name: related, label: Related programme slugs, widget: list }
+
+  - name: team
+    label: Team
+    files:
+      - name: team
+        label: Team members
+        file: src/content/team.json
+        fields:
+          - name: team
+            label: Members
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: group, label: Group, widget: select, options: [Leadership, Board, Programme staff, Volunteers] }
+              - { name: bio, label: Bio (40–60 words), widget: text }
+              - { name: photo, label: Square portrait, widget: image, required: false }
+              - { name: email, label: Email, widget: string, required: false }
+              - { name: linkedin, label: LinkedIn, widget: string, required: false }
+              - { name: order, label: Order, widget: number, value_type: int }
+
+  - name: partners
+    label: Partners
+    files:
+      - name: partners
+        label: Partners
+        file: src/content/partners.json
+        fields:
+          - name: partners
+            label: Partners
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: url, label: Website, widget: string }
+              - { name: logo, label: Logo, widget: image, required: false }
+              - { name: blurb, label: One line on the partnership, widget: string, required: false }
+              - { name: permission, label: Partner has given permission to be listed, widget: boolean, default: false }
+
+  - name: news
+    label: News & stories
+    files:
+      - name: news
+        label: News items
+        file: src/content/news.json
+        fields:
+          - name: news
+            label: Items
+            widget: list
+            fields:
+              - { name: slug, label: Slug, widget: string }
+              - { name: title, label: Headline, widget: string }
+              - { name: date, label: Date, widget: datetime, format: YYYY-MM-DD, time_format: false }
+              - { name: place, label: Place (never a survivor's exact location), widget: string, required: false }
+              - { name: summary, label: Summary, widget: text }
+              - { name: body, label: Body, widget: text, required: false }
+              - { name: programmes, label: Programme slugs, widget: list, required: false }
+              - { name: featured, label: Feature as a story, widget: boolean, default: false }
+              - { name: quote, label: Participant quote (stories), widget: text, required: false }
+              - { name: attribution, label: Name or pseudonym (never a child's or survivor's full name), widget: string, required: false }
+              - { name: photo, label: Photo slot, widget: string, required: false }
+              - { name: alt, label: Photo alt text, widget: string, required: false }
+              - { name: consent, label: Written consent collected, widget: boolean, default: false }
+              - { name: published, label: Published, widget: boolean, default: false }
+
+  - name: gallery
+    label: Gallery captions
+    files:
+      - name: gallery
+        label: Gallery
+        file: src/content/gallery.json
+        fields:
+          - name: gallery
+            label: Photos
+            widget: list
+            fields:
+              - { name: photo, label: Photo slot, widget: string }
+              - { name: alt, label: Alt text (describe the activity, never name vulnerable people), widget: string }
+              - { name: caption, label: Caption, widget: string, required: false }
+
+  - name: about
+    label: About page
+    files:
+      - name: timeline
+        label: Our story timeline (shows when there are 2+ real entries)
+        file: src/content/timeline.json
+        fields:
+          - name: timeline
+            label: Entries
+            widget: list
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: text, label: Text, widget: string }
+              - { name: real, label: Confirmed by client, widget: boolean, default: false }
+      - name: locations
+        label: Impact map — highlighted locations
+        file: src/content/locations.json
+        fields:
+          - name: locations
+            label: Locations
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: lon, label: Longitude, widget: number, value_type: float }
+              - { name: lat, label: Latitude, widget: number, value_type: float }

@@ -1,0 +1,18 @@
+{
+  "partners": [
+    {
+      "name": "Serve the Global Church",
+      "url": "https://servetheglobalchurch.org",
+      "logo": null,
+      "blurb": "",
+      "permission": false
+    },
+    {
+      "name": "Action Five Freiburg e.V.",
+      "url": "https://actionfive-freiburg.de",
+      "logo": null,
+      "blurb": "",
+      "permission": false
+    }
+  ]
+}
