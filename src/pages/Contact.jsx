@@ -62,7 +62,6 @@ export default function Contact() {
         </div>
         <Form
           name="contact"
-          action="/contact?sent=1"
           submitLabel="Send message"
           className="form--plain"
           successMessage="Thank you — your message has been sent. We’ll get back to you soon."

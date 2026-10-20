@@ -1,10 +1,29 @@
 import { useState, useId, useEffect } from 'react';
+import { site } from '../lib/content.js';
 
-// Provider-agnostic form handling.
-// - Default: Netlify Forms (data-netlify attributes, POST urlencoded to "/").
-// - Set VITE_FORM_ENDPOINT (e.g. https://formspree.io/f/xxxx) at build time to switch to Formspree.
+// Provider-agnostic form handling (the site is static, hosted on Vercel).
+// - Set VITE_FORM_ENDPOINT (e.g. https://formspree.io/f/xxxx) at build time to deliver submissions by email
+//   without the visitor leaving the page.
+// - Without it, submitting opens the visitor's email app with the message filled in, addressed to site.email.
 // Never collect payment data in these forms.
 const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || '';
+const SKIP = new Set(['form-name', 'bot-field', 'consent']);
+
+const LABELS = { name: 'Name', email: 'Email', phone: 'Phone', subject: 'Subject', organisation: 'Organisation', country: 'Country', message: 'Message' };
+
+/** Builds a mailto: link from the form fields (checkbox groups are joined). */
+function mailtoFrom(formName, data) {
+  const fields = {};
+  for (const [k, v] of data.entries()) {
+    if (SKIP.has(k) || !String(v).trim()) continue;
+    fields[k] = fields[k] ? `${fields[k]}, ${v}` : String(v);
+  }
+  const { message = '', ...rest } = fields;
+  const lines = Object.entries(rest).map(([k, v]) => `${LABELS[k] || k}: ${v}`);
+  const body = [...lines, '', message].join('\n');
+  const subject = `Website ${formName === 'partnership' ? 'partnership enquiry' : 'message'}${fields.name ? ` from ${fields.name}` : ''}`;
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export function Field({ label, optional, name, type = 'text', required, autoComplete, as = 'input', rows, children, defaultValue, value, onChange }) {
   const Control = as;
@@ -76,12 +95,12 @@ function Honeypot() {
 
 /**
  * <Form name="contact" successMessage="…"> fields </Form>
- * Works without JS (native POST, Netlify redirects back with ?sent=1).
+ * Works without JS (native POST to the form service, or the browser's mailto handling).
  */
-export default function Form({ name, action, submitLabel, successMessage, className = '', children, note }) {
-  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+export default function Form({ name, submitLabel, successMessage, className = '', children, note }) {
+  const [status, setStatus] = useState('idle'); // idle | sending | success | mailto | error
   const statusId = useId();
-  // Without JS the browser posts natively and the host redirects back with ?sent=1.
+  // A form service can redirect back with ?sent=1 after a no-JS post.
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get('sent') === '1') setStatus('success');
   }, []);
@@ -99,18 +118,14 @@ export default function Form({ name, action, submitLabel, successMessage, classN
       setStatus('success');
       return;
     }
+    if (!ENDPOINT) {
+      window.location.href = mailtoFrom(name, data);
+      setStatus('mailto');
+      return;
+    }
     setStatus('sending');
     try {
-      let res;
-      if (ENDPOINT) {
-        res = await fetch(ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-      } else {
-        res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString(),
-        });
-      }
+      const res = await fetch(ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
       if (!res.ok) throw new Error(String(res.status));
       form.reset();
       setStatus('success');
@@ -123,9 +138,9 @@ export default function Form({ name, action, submitLabel, successMessage, classN
     <form
       name={name}
       method="POST"
-      action={ENDPOINT || import.meta.env.BASE_URL.replace(/\/$/, '') + action}
-      data-netlify={ENDPOINT ? undefined : 'true'}
-      netlify-honeypot={ENDPOINT ? undefined : 'bot-field'}
+      // Without JS: post to the form service, or fall back to the browser's own mailto handling.
+      action={ENDPOINT || `mailto:${site.email}`}
+      encType={ENDPOINT ? undefined : 'text/plain'}
       onSubmit={onSubmit}
       className={`form ${className}`.trim()}
       aria-describedby={statusId}
@@ -139,9 +154,15 @@ export default function Form({ name, action, submitLabel, successMessage, classN
       {note && <p className="form__note">{note}</p>}
       <div id={statusId} aria-live="polite" className="form__status">
         {status === 'success' && <p className="form__msg form__msg--ok">{successMessage}</p>}
+        {status === 'mailto' && (
+          <p className="form__msg form__msg--ok">
+            Your email app should now open with your message ready to send. If it doesn’t, please email us at{' '}
+            <a href={`mailto:${site.email}`}>{site.email}</a>.
+          </p>
+        )}
         {status === 'error' && (
           <p className="form__msg form__msg--err">
-            Sorry, your message could not be sent. Please try again, or email us directly.
+            Sorry, your message could not be sent. Please try again, or email us at <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
         )}
       </div>

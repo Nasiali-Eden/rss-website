@@ -1,8 +1,10 @@
 # Decap CMS (git-based). Edits are committed to the repo; the host rebuilds the site.
-# TODO: auth. Netlify: backend.name = git-gateway (+ enable Identity).
-#       GitHub OAuth: backend.name = github, repo = <owner>/<repo>, base_url = <oauth proxy>.
+# Auth (Vercel has no Netlify Identity): editors log in with GitHub. Login needs an OAuth proxy,
+# e.g. a small Vercel/Cloudflare function such as decap-proxy; then add `base_url: https://<proxy-domain>` below.
+# Editors need write access to the repo.
 backend:
-  name: git-gateway
+  name: github
+  repo: Nasiali-Eden/rss-website
   branch: main
 # local_backend: true   # run `npx decap-server` for local editing
 

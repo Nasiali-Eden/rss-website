@@ -33,11 +33,13 @@ npm run build     # builds + prerenders everything into dist/
 npm run preview   # serve the build
 ```
 
-Deploy `dist/` to any static host. `netlify.toml` is included (Netlify Forms work out of the box).
+Hosted on **Vercel**. `vercel.json` sets the build (`npm run build` → `dist/`), clean URLs and the cache/security headers. Import the GitHub repo in Vercel; every push to `main` deploys.
+
+Forms: with `VITE_FORM_ENDPOINT` empty, submitting a form opens the visitor's email app pre-filled and addressed to `site.email`. For in-page sending, create a Formspree form and set `VITE_FORM_ENDPOINT` in Vercel, then redeploy.
 
 Environment variables (see `.env.example`):
 
-- `VITE_FORM_ENDPOINT` — set to a Formspree URL to switch forms away from Netlify Forms.
+- `VITE_FORM_ENDPOINT` — a Formspree URL; submissions are then sent in-page instead of via the visitor's email app.
 - `PLAUSIBLE_DOMAIN` — enables Plausible analytics; nothing loads if unset.
 
 ## How to edit content
@@ -49,7 +51,7 @@ All content is JSON in `src/content/`:
 - `team.json`, `partners.json`, `news.json`, `timeline.json`, `locations.json`, `gallery.json`
 - `pages.json` — values, approach pillars, partnership ways, who we serve
 
-**CMS:** Decap CMS is configured at `/admin` (`public/admin/config.yml`). TODO: choose auth on the host — Netlify Identity + Git Gateway (uncomment the widget script in `public/admin/index.html`) or GitHub OAuth.
+**CMS:** Decap CMS is configured at `/admin` (`public/admin/config.yml`). It uses the GitHub backend; TODO: deploy a GitHub OAuth proxy and set `base_url` in `config.yml` so editors can log in.
 
 **Photos:** drop the client's photos in `src/assets/photos/` as `p1.jpg` … `p7.jpg`. Anything missing renders a placeholder; nothing crashes. Strip EXIF/GPS before committing (e.g. `exiftool -all= p1.jpg`).
 

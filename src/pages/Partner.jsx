@@ -64,7 +64,6 @@ export default function Partner() {
         </div>
         <Form
           name="partnership"
-          action="/partner?sent=1#enquiry"
           submitLabel="Send enquiry"
           className="form--panel"
           successMessage="Thank you — your enquiry has been sent. We’ll reply by email."
