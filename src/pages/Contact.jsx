@@ -58,7 +58,7 @@ export default function Contact() {
               </li>
             )}
           </ul>
-          <MapEmbed staticImage={site.map?.staticImage} embedUrl={site.map?.embedUrl} label="Domus Erum Residence, Torit" />
+          <MapEmbed embedUrl={site.map?.embedUrl} label="Domus Erum Residence, Torit" />
         </div>
         <Form
           name="contact"

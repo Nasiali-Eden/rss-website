@@ -1,0 +1,49 @@
+{
+  "members": [
+    {
+      "name": "Sydney Yapoujian",
+      "role": "Board Chairperson (USA)",
+      "group": "Board Chair",
+      "bio": "Board Chairperson since 2019, based in Boulder, Colorado. Brings experience in business management and corporate leadership to the organisation’s planning, decision-making and governance.",
+      "photo": "/uploads/governance/sydney-yapoujian.jpg",
+      "social": {
+        "linkedin": null,
+        "facebook": null,
+        "x": null,
+        "instagram": null,
+        "website": null
+      },
+      "order": 1
+    },
+    {
+      "name": "Lily Ribeiro",
+      "role": "Board Member",
+      "group": "Board Member",
+      "bio": "USA Director and Board Secretary & Treasurer, serving since 2018 from Colorado. An experienced pilot who has led trauma-healing workshops for communities affected by conflict and displacement.",
+      "photo": "/uploads/governance/lily-ribeiro.jpg",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/lilyribeiro/",
+        "facebook": null,
+        "x": null,
+        "instagram": null,
+        "website": null
+      },
+      "order": 2
+    },
+    {
+      "name": "Rev. John Kerim",
+      "role": "Executive Director",
+      "group": "Director",
+      "bio": "Theologian and organisational leader with over 12 years’ experience. Executive Director since 2018; formerly Country Program Manager, Wycliffe Associates (USA).",
+      "photo": "/uploads/governance/john-kerim.jpg",
+      "social": {
+        "linkedin": null,
+        "facebook": "https://www.facebook.com/john.kerim.1/",
+        "x": null,
+        "instagram": null,
+        "website": null
+      },
+      "order": 3
+    }
+  ]
+}

@@ -1,18 +1,25 @@
 {
   "partners": [
     {
+      "name": "Africa Inland Church – South Sudan",
+      "url": "",
+      "logo": "/uploads/partners/aic-south-sudan.png",
+      "blurb": "Juba, South Sudan",
+      "permission": true
+    },
+    {
       "name": "Serve the Global Church",
       "url": "https://servetheglobalchurch.org",
-      "logo": null,
+      "logo": "/uploads/partners/serve-the-global-church.jpg",
       "blurb": "",
-      "permission": false
+      "permission": true
     },
     {
       "name": "Action Five Freiburg e.V.",
-      "url": "https://actionfive-freiburg.de",
-      "logo": null,
-      "blurb": "",
-      "permission": false
+      "url": "https://www.actionfive-freiburg.de",
+      "logo": "/uploads/partners/action-five-freiburg.png",
+      "blurb": "Freiburg, Germany",
+      "permission": true
     }
   ]
 }

@@ -10,7 +10,7 @@ export const ngoJsonLd = () => ({
   '@type': 'NGO',
   name: site.name,
   url: site.url,
-  logo: `${site.url}/favicon.svg`,
+  logo: `${site.url}/logo.png`,
   email: site.email,
   telephone: site.phones[0]?.tel,
   address: {

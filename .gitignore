@@ -2,3 +2,7 @@ node_modules
 dist
 dist-ssr
 .env
+
+# Client source documents (contain personal contact details) and photos not cleared for use
+partner/
+src/assets/photos/p3.jpg

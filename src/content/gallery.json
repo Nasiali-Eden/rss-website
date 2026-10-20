@@ -1,33 +1,43 @@
 {
   "gallery": [
     {
+      "photo": "p8",
+      "alt": "Church leaders in red and black robes meet around a table",
+      "caption": "Church leaders meeting together"
+    },
+    {
+      "photo": "p10",
+      "alt": "Women receive bags of food supplies at a distribution",
+      "caption": "Food distribution to vulnerable households"
+    },
+    {
+      "photo": "p9",
+      "alt": "Community members gather in a courtyard",
+      "caption": "Community gathering"
+    },
+    {
       "photo": "p1",
-      "alt": "TODO: client to supply caption",
+      "alt": "Participants in a workshop discussion inside a church",
       "caption": ""
     },
     {
       "photo": "p2",
-      "alt": "TODO: client to supply caption",
-      "caption": ""
-    },
-    {
-      "photo": "p4",
-      "alt": "TODO: client to supply caption",
+      "alt": "Community members meet in a circle outdoors",
       "caption": ""
     },
     {
       "photo": "p5",
-      "alt": "TODO: client to supply caption",
+      "alt": "Small-group discussion during a training",
       "caption": ""
     },
     {
       "photo": "p6",
-      "alt": "TODO: client to supply caption",
+      "alt": "A large gathering in a church hall",
       "caption": ""
     },
     {
       "photo": "p7",
-      "alt": "TODO: client to supply caption",
+      "alt": "Participants work in small groups during a training",
       "caption": ""
     }
   ]

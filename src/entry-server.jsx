@@ -23,6 +23,8 @@ export const routes = [
   ...programmes.map((p) => `/what-we-do/${p.slug}`),
   '/impact',
   '/team',
+  '/governance',
+  '/partners',
   '/partner',
   '/contact',
   '/safeguarding',

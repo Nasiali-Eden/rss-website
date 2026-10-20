@@ -68,8 +68,8 @@ collections:
             label: Map
             widget: object
             fields:
-              - { name: staticImage, label: Static map image, widget: image, required: false }
-              - { name: embedUrl, label: Interactive map embed URL, widget: string }
+              - { name: embedUrl, label: Office map embed URL (Contact page), widget: string }
+              - { name: countryEmbedUrl, label: South Sudan map embed URL (Impact page), widget: string }
           - name: impact
             label: Impact numbers
             widget: object
@@ -132,6 +132,34 @@ collections:
               - { name: photo, label: Square portrait, widget: image, required: false }
               - { name: email, label: Email, widget: string, required: false }
               - { name: linkedin, label: LinkedIn, widget: string, required: false }
+              - { name: order, label: Order, widget: number, value_type: int }
+
+  - name: governance
+    label: Governance
+    files:
+      - name: governance
+        label: Board & Director
+        file: src/content/governance.json
+        fields:
+          - name: members
+            label: Members
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Role title, widget: string }
+              - { name: group, label: Position, widget: select, options: [Board Chair, Board Member, Director] }
+              - { name: bio, label: Short bio (1–2 sentences), widget: text, required: false }
+              - { name: photo, label: Portrait photo (portrait crop, face near top), widget: image, required: false, media_folder: /public/uploads/governance, public_folder: /uploads/governance }
+              - name: social
+                label: Social profiles (full URLs; leave empty to hide)
+                widget: object
+                required: false
+                fields:
+                  - { name: linkedin, label: LinkedIn, widget: string, required: false }
+                  - { name: facebook, label: Facebook, widget: string, required: false }
+                  - { name: x, label: X (Twitter), widget: string, required: false }
+                  - { name: instagram, label: Instagram, widget: string, required: false }
+                  - { name: website, label: Website, widget: string, required: false }
               - { name: order, label: Order, widget: number, value_type: int }
 
   - name: partners

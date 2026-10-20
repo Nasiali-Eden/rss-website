@@ -25,6 +25,8 @@ export default function SiteFooter() {
             <li><Link to="/what-we-do">What We Do</Link></li>
             <li><Link to="/impact">Impact</Link></li>
             {showTeam && <li><Link to="/team">Team</Link></li>}
+            <li><Link to="/governance">Governance</Link></li>
+            <li><Link to="/partners">Our Partners</Link></li>
             <li><Link to="/partner">Partner With Us</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>

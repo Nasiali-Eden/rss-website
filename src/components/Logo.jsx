@@ -1,6 +1,9 @@
-// TODO: The final vector logo is pending from the client. Replace the SVG and
-// wordmark below in this one file and it updates everywhere (header, footer,
-// placeholders). Favicon: public/favicon.svg.
+import logoOnDark from '../assets/brand/logo-on-dark.webp';
+
+// The client's logo (background removed, with a thin white outline so the black
+// silhouette reads on navy). Source: src/assets/brand/logo-original.jpeg.
+// Favicons live in public/ (favicon.ico, favicon-32.png, icon-192.png, apple-touch-icon.png).
+// SunriseMark is kept as a small decorative mark for photo placeholders and the 404 page.
 export function SunriseMark({ size = 44, rays = true }) {
   return (
     <svg width={size} height={size} viewBox="0 0 44 44" aria-hidden="true" focusable="false">
@@ -12,14 +15,13 @@ export function SunriseMark({ size = 44, rays = true }) {
   );
 }
 
+const HEIGHTS = { sm: 58, md: 88, footer: 130 };
+
 export default function Logo({ size = 'md' }) {
+  const h = HEIGHTS[size] || HEIGHTS.md;
   return (
     <span className={`logo logo--${size}`}>
-      <SunriseMark size={size === 'sm' ? 34 : size === 'footer' ? 40 : 44} rays={size !== 'sm'} />
-      <span className="logo__words">
-        <span className="logo__relief">Relief</span>
-        <span className="logo__country">South Sudan</span>
-      </span>
+      <img src={logoOnDark} alt="Relief South Sudan" height={h} width={Math.round((h * 597) / 452)} className="logo__img" />
     </span>
   );
 }

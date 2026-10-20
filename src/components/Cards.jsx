@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Icon from './Icon.jsx';
-import { shortTitle, cardLine } from '../lib/content.js';
+import { shortTitle, cardLine, assetUrl } from '../lib/content.js';
 
 export function IconDisc({ name, size = 52, amber = false }) {
   return (
@@ -105,13 +105,19 @@ export function StoryCard({ item }) {
   );
 }
 
+/** Links out when the partner has a website; otherwise a plain card. */
+function PartnerLink({ p, className, children }) {
+  if (!p.url) return <div className={className}>{children}</div>;
+  return <a href={p.url} rel="noopener" target="_blank" className={className}>{children}</a>;
+}
+
 export function PartnerCard({ p }) {
   return (
-    <a href={p.url} rel="noopener" target="_blank" className="card partner-card">
-      {p.logo && <img src={p.logo} alt="" className="partner-logo" loading="lazy" />}
+    <PartnerLink p={p} className="card partner-card">
+      {p.logo && <span className="partner-card__logo"><img src={assetUrl(p.logo)} alt="" loading="lazy" /></span>}
       <strong>{p.name}</strong>
       {p.blurb && <span>{p.blurb}</span>}
-    </a>
+    </PartnerLink>
   );
 }
 
@@ -120,9 +126,9 @@ export function PartnerLogoStrip({ items }) {
     <ul className="partner-strip" role="list">
       {items.map((p) => (
         <li key={p.name}>
-          <a href={p.url} rel="noopener" target="_blank" className="partner-strip__item">
-            {p.logo ? <img src={p.logo} alt={p.name} className="partner-logo" loading="lazy" /> : <span>{p.name}</span>}
-          </a>
+          <PartnerLink p={p} className="partner-strip__item">
+            {p.logo ? <img src={assetUrl(p.logo)} alt={p.name} className="partner-logo" loading="lazy" /> : <span>{p.name}</span>}
+          </PartnerLink>
         </li>
       ))}
     </ul>

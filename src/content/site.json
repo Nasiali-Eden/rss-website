@@ -12,7 +12,10 @@
   "social": {},
   "registration": { "body": "Relief and Rehabilitation Commission (RRC), Eastern Equatoria State – Torit", "number": "95", "act": "South Sudan NGO Act 2016, Chapter 3, Section 10", "validUntil": "2027-10-01" },
   "documents": { "certificate": null, "profile": null, "annualReport": null },
-  "map": { "staticImage": null, "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=32.50%2C4.36%2C32.64%2C4.46&layer=mapnik&marker=4.41%2C32.57" },
+  "map": {
+    "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=32.50%2C4.36%2C32.64%2C4.46&layer=mapnik&marker=4.41%2C32.57",
+    "countryEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=23.9%2C3.3%2C35.6%2C12.4&layer=mapnik&marker=4.41%2C32.57"
+  },
   "impact": { "published": false, "stats": [] },
-  "gallery": { "published": false }
+  "gallery": { "published": true }
 }

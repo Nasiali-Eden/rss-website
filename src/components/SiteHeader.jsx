@@ -5,8 +5,14 @@ import Icon from './Icon.jsx';
 import { IconDisc } from './Cards.jsx';
 import { programmes, shortTitle, cardLine, showTeam } from '../lib/content.js';
 
+const ABOUT_LINKS = [
+  { href: '/about', label: 'About Us' },
+  { href: '/governance', label: 'Governance' },
+  { href: '/partners', label: 'Our Partners' },
+];
+
 const NAV = [
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'About', children: ABOUT_LINKS },
   { href: '/what-we-do', label: 'What We Do', mega: true },
   { href: '/impact', label: 'Impact' },
   ...(showTeam ? [{ href: '/team', label: 'Team' }] : []),
@@ -24,12 +30,12 @@ function CtaLink({ cta, className, children }) {
   return <Link to={cta.href} className={className}>{children}</Link>;
 }
 
-function MegaMenu() {
+/** Shared open/close behaviour for header menus: closes on navigation, Escape and outside click. */
+function useMenu() {
   const [open, setOpen] = useState(false);
   const btnRef = useRef(null);
   const wrapRef = useRef(null);
   const { pathname } = useLocation();
-  const active = pathname.startsWith('/what-we-do');
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -51,6 +57,43 @@ function MegaMenu() {
       document.removeEventListener('mousedown', onClick);
     };
   }, [open]);
+
+  return { open, setOpen, btnRef, wrapRef, pathname };
+}
+
+function Dropdown({ item }) {
+  const { open, setOpen, btnRef, wrapRef, pathname } = useMenu();
+  const active = item.children.some((c) => pathname.startsWith(c.href));
+  const id = `dropdown-${item.label.toLowerCase()}`;
+  return (
+    <li className="dropdown" ref={wrapRef}>
+      {/* Plain link works without JS; the chevron button opens the list. */}
+      <NavLink to={item.href} end className={`nav__link${active ? ' is-active' : ''}`}>{item.label}</NavLink>
+      <button
+        ref={btnRef}
+        type="button"
+        className="mega__toggle"
+        aria-expanded={open}
+        aria-controls={id}
+        aria-label={`Show ${item.label} pages`}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <Icon name="chevron" size={16} strokeWidth={2} />
+      </button>
+      <ul id={id} className="dropdown__panel" role="list" hidden={!open}>
+        {item.children.map((c) => (
+          <li key={c.href}>
+            <NavLink to={c.href} end className="dropdown__link">{c.label}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
+}
+
+function MegaMenu() {
+  const { open, setOpen, btnRef, wrapRef, pathname } = useMenu();
+  const active = pathname.startsWith('/what-we-do');
 
   return (
     <li className="mega" ref={wrapRef}>
@@ -139,7 +182,16 @@ function Drawer({ open, onClose, cta, returnFocusRef }) {
         <ul role="list">
           {NAV.map((n) => (
             <li key={n.href}>
-              <NavLink to={n.href} end={!n.mega} className="drawer__link">{n.label}</NavLink>
+              <NavLink to={n.href} end={!n.mega && !n.children} className="drawer__link">{n.label}</NavLink>
+              {n.children && (
+                <ul role="list" className="drawer__sub">
+                  {n.children.filter((c) => c.href !== n.href).map((c) => (
+                    <li key={c.href}>
+                      <NavLink to={c.href} className="drawer__sublink">{c.label}</NavLink>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {n.mega && (
                 <ul role="list" className="drawer__sub">
                   {programmes.map((p) => (
@@ -180,6 +232,8 @@ export default function SiteHeader() {
             {NAV.map((n) =>
               n.mega ? (
                 <MegaMenu key={n.href} />
+              ) : n.children ? (
+                <Dropdown key={n.href} item={n} />
               ) : (
                 <li key={n.href}>
                   <NavLink to={n.href} className="nav__link">{n.label}</NavLink>

@@ -27,7 +27,7 @@ export default function Photo({ slot, alt = '', label, className = '', eager = f
       height={height}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
-      fetchpriority={eager ? 'high' : undefined}
+      fetchPriority={eager ? 'high' : undefined}
     />
   );
 }

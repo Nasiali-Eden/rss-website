@@ -81,18 +81,18 @@ All content is JSON in `src/content/`:
 
 ## Open items still placeholders
 
-1. Vector logo (`src/components/Logo.jsx`, `public/favicon.svg`)
-2. Team names, bios, photos
+1. Vector (SVG) version of the logo — currently a background-removed raster (`src/assets/brand/`, `public/logo.png`, favicons in `public/`)
+2. Team names, bios, photos (Board and Director are done on the Governance page, `src/content/governance.json`)
 3. Second phone number / WhatsApp confirmation
 4. Domain (`site.json → url` is `https://reliefsouthsudan.info`) and hosting
 5. Professional email on the domain
-6. Photo consent + captions for P1–P7, P3 clearance
+6. P3 clearance (T-shirt text). Photo consent for all gallery photos (P1–P11) was confirmed by the client on 2026-10-20; gallery is published.
 7. Hero and programme photography (WASH, girls, women)
 8. Founding story and milestones (`timeline.json`)
 9. Impact figures
 10. Operating locations (`locations.json`)
 11. Consented stories
-12. Partner logos, permission, blurbs
+12. Partner blurbs, a larger Action Five logo, and a website link for AIC South Sudan (logos and permission done, `src/content/partners.json`)
 13. Donation route (Phase 2 — not built)
 14. Safeguarding and privacy policy text
 15. Social accounts

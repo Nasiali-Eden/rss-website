@@ -32,6 +32,12 @@ const PATHS = {
   close: <path d="M6 6l12 12M18 6L6 18" />,
   arrowLeft: <path d="M15 5l-7 7 7 7" />,
   arrowRight: <path d="M9 5l7 7-7 7" />,
+  // Social
+  linkedin: <><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-6M11.5 13a2.5 2.5 0 0 1 5 0v3.5" /></>,
+  facebook: <path d="M15.5 3H13a4 4 0 0 0-4 4v3H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7.5a1 1 0 0 1 1-1h2z" />,
+  x: <path d="M4 4l11.5 16H20L8.5 4zM4 20l6.8-7.2M20 4l-6.6 6.8" />,
+  instagram: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5v.01" /></>,
+  globe: <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" /></>,
 };
 
 export default function Icon({ name, size = 24, strokeWidth = 1.7, className, title }) {

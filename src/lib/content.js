@@ -6,6 +6,7 @@ import newsFile from '../content/news.json';
 import timelineFile from '../content/timeline.json';
 import locationsFile from '../content/locations.json';
 import galleryFile from '../content/gallery.json';
+import governanceFile from '../content/governance.json';
 // Each content file is an object with one list (Decap CMS needs an object at the top level).
 const programmes = programmesFile.programmes;
 const partnersAll = partnersFile.partners || [];
@@ -25,6 +26,9 @@ export const partners = partnersAll.filter((p) => p.permission === true);
 export const team = [...teamAll].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
 export const showTeam = team.length > 0;
 
+/** Governance page: Board Chair, Board Members and Director, sorted. */
+export const governance = [...(governanceFile.members || [])].sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
+
 /** Stories / field updates: published AND consented only. */
 export const news = newsAll.filter((n) => n.published === true && n.consent === true);
 export const stories = news.filter((n) => n.featured === true);
@@ -42,5 +46,8 @@ export const showImpact =
 export const programmeBySlug = Object.fromEntries(programmes.map((p) => [p.slug, p]));
 export const shortTitle = (p) => p.shortTitle || p.title;
 export const cardLine = (p) => p.cardLine || p.tagline;
+
+/** Files uploaded to public/ (e.g. "/uploads/x.jpg") need the base path when the site runs at a sub-path. */
+export const assetUrl = (src) => (src?.startsWith('/') ? import.meta.env.BASE_URL.replace(/\/$/, '') + src : src);
 
 export const fullAddress = [site.address.line1, site.address.locality, site.address.region, site.address.country].join(', ');

@@ -9,6 +9,8 @@ import Programme from './pages/Programme.jsx';
 import Impact from './pages/Impact.jsx';
 import Team from './pages/Team.jsx';
 import Partner from './pages/Partner.jsx';
+import Governance from './pages/Governance.jsx';
+import Partners from './pages/Partners.jsx';
 import Contact from './pages/Contact.jsx';
 import Policy from './pages/Policy.jsx';
 import NotFound from './pages/NotFound.jsx';
@@ -41,6 +43,8 @@ export default function App() {
           <Route path="/what-we-do/:slug" element={<Programme />} />
           <Route path="/impact" element={<Impact />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/governance" element={<Governance />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/partner" element={<Partner />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/safeguarding" element={<Policy kind="safeguarding" />} />

@@ -4,7 +4,7 @@ import { Section, SectionHeading } from '../components/Section.jsx';
 import { StatCounters, StoryCard } from '../components/Cards.jsx';
 import { CTABand } from '../components/Bands.jsx';
 import Icon from '../components/Icon.jsx';
-import SouthSudanMap from '../components/SouthSudanMap.jsx';
+import MapEmbed from '../components/MapEmbed.jsx';
 import Gallery from '../components/Gallery.jsx';
 import { site, pages, gallery, stories, showImpact } from '../lib/content.js';
 
@@ -30,7 +30,10 @@ export default function Impact() {
             Eastern Equatoria, we work with local communities and partners to develop approaches that respond to the realities of each context.
           </p>
         </div>
-        <SouthSudanMap />
+        <figure className="ss-map">
+          <MapEmbed embedUrl={site.map?.countryEmbedUrl} label="South Sudan, with our base in Torit, Eastern Equatoria" tall />
+          <figcaption>Our base: Torit, Eastern Equatoria State.</figcaption>
+        </figure>
       </Section>
 
       <Section bg="cream" inner="stack-lg">

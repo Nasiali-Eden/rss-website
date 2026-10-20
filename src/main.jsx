@@ -14,5 +14,6 @@ const app = (
   </StrictMode>
 );
 // Pages are prerendered at build time, so hydrate when HTML is already there.
-if (root.hasChildNodes()) hydrateRoot(root, app);
+// (In dev the root only holds the <!--app--> placeholder comment, so check for an element.)
+if (root.firstElementChild) hydrateRoot(root, app);
 else createRoot(root).render(app);
