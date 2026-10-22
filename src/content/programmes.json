@@ -98,8 +98,9 @@
         "Support and referral for vulnerable girls"
       ],
       "outcome": "We believe every girl deserves the opportunity to grow up safe, educated, empowered and hopeful.",
-      "image": null,
-      "imageRule": "NO PHOTO EXISTS. Use illustration or placeholder. Never show identifiable girls.",
+      "image": "P19",
+      "imageAlt": "An empty classroom desk with open exercise books, a pencil and a school bag",
+      "imageRule": "Illustration only (AI-generated, no people). Never show identifiable girls.",
       "related": [
         "women-livelihoods",
         "trauma-healing-peacebuilding"
@@ -126,8 +127,8 @@
         "Sustainable water resource management"
       ],
       "outcome": "We work with communities to ensure that water facilities are appropriately managed, maintained and sustained for long-term benefit.",
-      "image": null,
-      "imageRule": "Needed: borehole / water point photos. Placeholder until supplied.",
+      "image": "P18",
+      "imageAlt": "Clean water pouring from a tap into a yellow jerrycan",
       "related": [
         "women-livelihoods",
         "girls-empowerment"
@@ -155,8 +156,8 @@
         "Mentorship and peer support"
       ],
       "outcome": "We seek to help women build sustainable livelihoods that contribute to stronger families and more resilient communities.",
-      "image": null,
-      "imageRule": "Needed: savings group / enterprise photos. Placeholder until supplied.",
+      "image": "P20",
+      "imageAlt": "A treadle sewing machine with folded printed fabric, a tape measure and scissors",
       "related": [
         "girls-empowerment",
         "wash"
